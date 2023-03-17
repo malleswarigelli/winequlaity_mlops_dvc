@@ -33,7 +33,9 @@ def train_and_evaluate(config_path):
     model_dir = config["model_dir"] # to save trained_model 
   
     alpha = config["estimators"]["ElasticNet"]["params"]["alpha"]
+   
     l1_ratio = config["estimators"]["ElasticNet"]["params"]["l1_ratio"]
+    
     random_state = config["base"]["random_state"]
     # target column
     target_col = config["base"]["target_col"]
@@ -60,7 +62,8 @@ def train_and_evaluate(config_path):
     print(" RMSE: %s" % rmse)
     print(" MAE: %s" % mae)
     print(" R2: %s" % r2)
-    
+    print(" alpha: %s" % alpha)
+    print(" l1_ratio: %s" % l1_ratio)
 ################################################
     scores_file = config["reports"]["scores"]
     params_file = config["reports"]["params"]
@@ -74,7 +77,7 @@ def train_and_evaluate(config_path):
             }
             json.dump(scores, f, indent=4)
             
-    if not os.path.exists(scores_file):
+    if not os.path.exists(params_file):
         with open(params_file, "w") as f:
             params = {
                 "alpha": alpha,
@@ -84,7 +87,7 @@ def train_and_evaluate(config_path):
         
 ####################################################
 
-    os.makedirs(model_dir, exists_ok = True)
+    os.makedirs(model_dir, exist_ok=True)
     model_path = os.path.join(model_dir, "model.joblib")
     joblib.dump(lr, model_path)
     
