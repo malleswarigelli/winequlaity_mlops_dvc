@@ -34,9 +34,15 @@ oneliner updates for readme
 git add . && git commit -m "update Readme.md"
 ```
 
+```bash
 git remote add origin https://github.com/malleswarigelli/winequlaity_mlops_dvc.git
+```
 
+```bash
 git branch -M main
+```
 
+```bash
 git push -u origin main
+```
 
