@@ -11,3 +11,5 @@ scikit-learn
 pytest
 tox
 flake8 # check goodness of code
+flask
+gunicorn
