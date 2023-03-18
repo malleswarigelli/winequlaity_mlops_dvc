@@ -8,10 +8,14 @@ class NotInRange(Exception):
 
 # for pytest to recognize start methods with test_
 
-    def test_generic():
-        # assertion will always be true, if test case pass
-        a = 5
-        with pytest.raises(NotInRange):
-            if a not in range(10,20):
-                raise NotInRange
-        
+def test_generic():
+    # assertion will always be true, if test case pass
+    a = 5
+    with pytest.raises(NotInRange):
+        if a not in range(10,20):
+            raise NotInRange
+
+def test_something():
+    a = 2
+    b = 2
+    assert True       
