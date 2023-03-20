@@ -1,8 +1,6 @@
 
  WineQuality Prediction
 
-1. [Github Account](https:/===================================
-
 Application URL : [WineQualtiy Prediction](https://wine-qulaity-app.herokuapp.com/)
 
 ## Software and account Requirement/github.com/)
