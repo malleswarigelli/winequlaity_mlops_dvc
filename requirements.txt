@@ -5,7 +5,6 @@
 # install third party packages
 dvc
 dvc[gdrive]
-sklearn
 pandas
 scikit-learn
 pytest
