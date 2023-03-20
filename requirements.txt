@@ -12,6 +12,4 @@ tox
 flake8 # check goodness of code
 flask
 gunicorn
-pandas
-numpy
 importlib-metadata==4.13.0
