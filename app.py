@@ -1,9 +1,7 @@
-
-
 from flask import Flask, render_template, request, jsonify
 import os
 import numpy as np
-from prediction_service import prediction
+from prediction_service.prediction import form_response, api_response
 
 
 webapp_root = "webapp"
@@ -21,10 +19,11 @@ def index():
         try:
             if request.form:
                 dict_req = dict(request.form)
-                response = prediction.form_response(dict_req)
+                response = form_response(dict_req)
                 return render_template("index.html", response=response)
+            
             elif request.json:
-                response = prediction.api_response(request.json)
+                response = api_response(request.json)
                 return jsonify(response)
 
         except Exception as e:
@@ -38,3 +37,4 @@ def index():
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
+    
