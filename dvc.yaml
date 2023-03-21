@@ -28,10 +28,18 @@ stages:
     params:
     - estimators.ElasticNet.params.alpha
     - estimators.ElasticNet.params.l1_ratio
-    metrics:
-    - report/scores.json:
-        cache: false # scores are saved in .json file every time pipeline runs
-    - report/params.json:
-        cache: false
-    outs:
-    - saved_models/model.joblib
+
+    # metrics:
+    # - report/scores.json:
+    #     cache: false # scores are saved in .json file every time pipeline runs
+    # - report/params.json:
+    #     cache: false
+    # outs:
+    # - saved_models/model.joblib
+
+    # based on certain parameters, choose our model and will tag as production model, that model only get deployed
+    # log_production_model:
+    #   cmd: python src/log_production_model.py --config=params.yaml
+    #   deps:
+    #   - src/log_production_model.py
+

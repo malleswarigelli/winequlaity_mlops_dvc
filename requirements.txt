@@ -1,6 +1,6 @@
 
 # local package install 
--e .
+# -e .
 
 # install third party packages
 dvc
@@ -13,3 +13,4 @@ flake8 # check goodness of code
 flask
 gunicorn
 importlib-metadata==4.13.0
+mlflow
